@@ -4,8 +4,16 @@ const state = {
     gpio: [],
     memory: 0,
     paracc: [],
-    waterProcess: {},
-    waterControl: {}
+    waterProcess: {
+        type: 'waterprocess-fill'
+    },
+    waterControl: {
+        type: 'waterprocess-fill',
+        data: {
+            crt: 0,
+            max: 3600
+        }
+    }
 }
 
 const getters = {

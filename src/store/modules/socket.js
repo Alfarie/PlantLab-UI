@@ -5,6 +5,12 @@ const state = {
 const getters = {
     ConnectionStatus: (state)=>{
         return state.connect;
+    },
+    connect: (state)=>{
+        return state.connect;
+    },
+    isConnect: (state)=>{
+        return (state.connect)? 'ONLINE': 'OFFLINE';
     }
 }
 
