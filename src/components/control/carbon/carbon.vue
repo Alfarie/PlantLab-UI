@@ -39,6 +39,7 @@ import InputValue from './inputvalue.vue'
       methods: {
           update(){
               this.$store.dispatch('uploadCo2');
+              this.$store.dispatch('popupUpdateModal');
           }
       },
     computed: {
