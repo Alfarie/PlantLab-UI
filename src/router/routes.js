@@ -13,6 +13,7 @@ import Water from '../components/control/water/water.vue'
 
 import Setting from '../components/setting/setting.vue'
 import Configuration from '../components/setting/configuration/configuration.vue'
+import DateTime from '../components/setting/datetime/datetime.vue'
 
 export const routes = [
     {path: '/showdata', name: 'showo-data', component: ShowData},
@@ -27,7 +28,8 @@ export const routes = [
         {path: 'water', name: 'water', component: Water}
     ]},
     {path: '/setting', name: 'setting', component: Setting, children: [
-        {path: 'configuration', name: 'configuration', component: Configuration }
+        {path: 'configuration', name: 'configuration', component: Configuration },
+        {path: 'datetime', name: 'datetime', component: DateTime },
     ]},
     {path: '/*', redirect: "/summary"}
 ]
