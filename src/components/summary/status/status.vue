@@ -25,8 +25,8 @@
                     <img src="/src/assets/img/co2process.svg" style="height: 100px;">
                 </div>
                 <div>
-                    <h3 style="color: red">VALVE CLOSE</h3>
-                    <h3> 1500 / 1800 ppm</h3>
+                    <h3 :class="[{on: (co2Status.status==1)}, {off: (co2Status.status!=1)}]">{{co2Valve}}</h3>
+                    <h3> {{co2Status.crt}} / {{getControl[1].setbound.lower}} ppm</h3>
                 </div>
             </router-link>
         </div>
@@ -40,8 +40,17 @@
                     <img src="/src/assets/img/solution.svg" style="width: 100px;">
                 </div>
                 <div>
-                    <h3>EC : pH</h3>
-                    <h3>1.2/2.0 : 6.5/7.5</h3>
+                    <h3> 
+                      <span :class="[{on: (ecStatus.status==1)}, {off: (ecStatus.status!=1)}]">
+                        EC<span v-if="ecStatus.mode != 2" style="color:red;">(INA)</span>
+                      </span>  
+                    : 
+                      <span :class="[{on: (phStatus.status==1)}, {off: (phStatus.status!=1)}]" >
+                        pH <span v-if="phStatus.mode != 2" style="color:red;">(INA)</span>
+                      </span> 
+                    
+                    </h3>
+                    <h3> {{ecStatus.crt}}/{{getControl[2].setpoint.setpoint}} : {{phStatus.crt}}/{{getControl[3].setpoint.setpoint}} </h3>
                 </div>
             </router-link>
         </div>
@@ -69,7 +78,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["mcuStatus"]),
+    ...mapGetters(["mcuStatus", 'co2Status', 'ecStatus', 'phStatus', 'getControl']),
     waterProcess() {
       return this.mcuStatus.waterProcess;
     },
@@ -87,6 +96,15 @@ export default {
         return this.secToTime( parseInt(timing.crt.toFixed(0))) + "-" + this.secToTime( parseInt(timing.max.toFixed(0)));
       } else {
         return "--:--";
+      }
+    },
+    co2Valve(){
+      let mode = this.co2Status.mode;
+      if(mode == 3){
+        return (this.co2Status.status == 1)? 'VALUE OPENED':'VALUE CLOSED'
+      }
+      else{
+        return 'INACTIVE'
       }
     }
   },
@@ -154,7 +172,7 @@ hr.vertical {
   /* or height in PX */
 }
 .on {
-  color: rgb(107, 233, 95);
+  color: rgb(33, 206, 18);
   font-weight: bolder;
 }
 .off {
