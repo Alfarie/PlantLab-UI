@@ -12,7 +12,7 @@
             </div>
           </div>
         </router-link>
-        <router-link tag="div" to="/datetime" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="datetime">
+        <router-link tag="div" to="/setting/datetime" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="datetime">
           <div class="grey-panel pn">
             <div style="display: inline">
               <img src="/src/assets/img/setclock.png" style="width: 80px; margin: 10px;">
