@@ -22,6 +22,7 @@ export default {
     deleteIndex(){
         this.getControl[0].timer.list.splice(this.index,1);
         this.$store.dispatch('uploadControl', 0);
+        this.$store.dispatch('popupUpdateModal');
     }  
   },
   computed: {
