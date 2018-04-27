@@ -28,7 +28,7 @@ const getters = {
 
 const mutations ={
     addTimer(state, timer){
-        state.control[0].mode = 1;
+        // state.control[0].mode = 1;
         state.control[0].timer.list.push(timer);
         state.control[0].timer.list.sort( (a,b)=> a[0] - b[0]);
     }
@@ -56,15 +56,21 @@ const actions = {
         dispatch('uploadControl', 0);
     },
     uploadNutrition:({dispatch,state})=>{
-        state.control[2].mode = 2;
-        state.control[3].mode = 2;
+        // state.control[2].mode = 2;
+        // state.control[3].mode = 2;
         dispatch('uploadControl', 2);
         setTimeout( ()=>{
             dispatch('uploadControl', 3);
-        },2000);
+        },1500);
+    },
+    uploadEC:({dispatch,state})=>{
+        dispatch('uploadControl', 2);
+    },
+    uploadPH:({dispatch,state})=>{
+        dispatch('uploadControl', 3);
     },
     uploadCo2: ({dispatch,state})=>{
-        state.control[1].mode = 3;
+        // state.control[1].mode = 3;
         dispatch('uploadControl', 1);
     },
     uploadControl: ({commit,state}, channel)=>{
