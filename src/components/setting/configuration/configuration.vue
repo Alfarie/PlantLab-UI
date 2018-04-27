@@ -21,6 +21,8 @@
       </div>
       <div class="col-lg-4">
         <h1>Nutrition</h1>
+        {{getControl[2].mode}}
+        {{getControl[3].mode}}
         <app-switch-button title="EC Pump" v-model="ecPump"></app-switch-button>
         <app-switch-button title="pH Pump" v-model="phPump"></app-switch-button>
         <app-switch-button title="CO2 Valve" v-model="co2valve"></app-switch-button>
@@ -49,6 +51,7 @@
         set(value){
           this.getWaterControl.isCir = (value)?1:0
           this.$store.dispatch('popupUpdateModal');
+          this.$store.dispatch('uploadWater');
         }
       },
       isFill: {
@@ -58,6 +61,7 @@
         set(value){
           this.getWaterControl.isFill = (value)?1:0
           this.$store.dispatch('popupUpdateModal');
+          this.$store.dispatch('uploadWater');
         }
       },
       ecPump: {
@@ -66,7 +70,8 @@
         },
         set(value){
           this.getControl[2].mode = (value) ? 2 : 0;
-          this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('popupUpdateModal');
+          this.$store.dispatch('uploadEC');
         }
       },
       phPump: {
@@ -76,6 +81,7 @@
         set(value){
           this.getControl[3].mode = (value) ? 2 : 0;
           this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('uploadPH');
         }
       },
       co2valve: {
@@ -85,6 +91,7 @@
         set(value){
           this.getControl[1].mode = (value) ? 3 : 0;
           this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('uploadCo2');
         }
       },
       autoMode: {
@@ -94,6 +101,7 @@
         set(value){
           this.getControl[0].mode = (value) ? 1 : 0;
           this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('uploadControl',0);
         }
       },
       ledManual: {
@@ -103,6 +111,8 @@
         set(value){
           this.getControl[0].manual.status = (value) ? 1 : 0;
           this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('uploadControl',0);
+
         }
       }
     },

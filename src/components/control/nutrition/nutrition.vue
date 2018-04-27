@@ -63,6 +63,7 @@ export default{
     methods: {
       update(){
         this.$store.dispatch('uploadNutrition');
+        this.$store.dispatch('popupUpdateModal');
       }
     }
 }

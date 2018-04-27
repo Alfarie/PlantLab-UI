@@ -49,6 +49,7 @@
     methods: {
       update(){
         this.$store.dispatch('uploadWater');
+        this.$store.dispatch('popupUpdateModal');
       }
     }
   }
