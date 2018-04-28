@@ -9,13 +9,20 @@
                     <span  style="font-size: 25px;">{{language}}</span>
                 </button>
         </div>
+         <div class="pull-right" v-for="(gpio,ind) in mcuStatus.gpio" 
+            :key="'gpio' + gpio+ind" 
+            :class="[{on: gpio },{off: !gpio}]">
+            <i class="fa fa-circle fa-2x channel" ></i>
+        </div>
     </div>
 </template>
 
 <script>
 //  style="background-color: rgb(238, 238, 238);"
+import {mapGetters} from 'vuex'
 export default {
   computed: {
+    ...mapGetters(['mcuStatus']),
     flag() {
       let lang = "";
       if (this.language == "en") lang = "us";
@@ -27,7 +34,10 @@ export default {
     changeLanguage() {
       if (this.language == "th") this.language = "en";
       else if (this.language == "en") this.language = "th";
-      console.log(this.language);
+      // console.log(this.language);
+    },
+    gpioStatus(ch){
+      return (this.mcuStatus.gpio[ch] ==1)? true:false;
     }
   },
   filters: {
@@ -41,5 +51,16 @@ export default {
 
 
 <style scoped>
-
+.channel{
+  margin-right: 5px;
+  margin-top: 10px;
+}
+.on {
+  color: rgb(33, 206, 18);
+  font-weight: bolder;
+}
+.off {
+  color: rgb(224, 100, 100);
+  font-weight: bolder;
+}
 </style>

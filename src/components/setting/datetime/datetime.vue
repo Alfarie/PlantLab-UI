@@ -65,7 +65,7 @@ export default {
     Submit() {
       // 2018-02-23 02 : 00
       this.showAlert = false;
-      console.log(this.date, this.time);
+      // console.log(this.date, this.time);
       this.$store.dispatch('popupUpdateModal');
       this.$store.dispatch("updateDateTime", {
         date: this.date,

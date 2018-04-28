@@ -21,8 +21,6 @@
       </div>
       <div class="col-lg-4">
         <h1>Nutrition</h1>
-        {{getControl[2].mode}}
-        {{getControl[3].mode}}
         <app-switch-button title="EC Pump" v-model="ecPump"></app-switch-button>
         <app-switch-button title="pH Pump" v-model="phPump"></app-switch-button>
         <app-switch-button title="CO2 Valve" v-model="co2valve"></app-switch-button>

@@ -7,6 +7,8 @@ import LedAdd from '../components/control/led/add/add.vue'
 import LedDisplay from '../components/control/led/display/display.vue'
 
 import Nutrition from '../components/control/nutrition/nutrition.vue'
+import Calibration from '../components/control/nutrition/calibration.vue'
+import Parameters from '../components/control/nutrition/parameters.vue'
 import CO2 from '../components/control/carbon/carbon.vue'
 
 import Water from '../components/control/water/water.vue'
@@ -23,7 +25,10 @@ export const routes = [
             {path: 'add', name:'add-led', component: LedAdd},
             {path: 'display', name:'disp-led', component: LedDisplay}
         ]},
-        {path: 'nutrition', name: 'nutrition', component: Nutrition},
+        {path: 'nutrition', name: 'nutrition', component: Nutrition, children: [
+            {path: 'cal', name: 'calibration', component: Calibration},
+            {path: 'param', name: 'parameters', component: Parameters}
+        ]},
         {path: 'co2', name: 'co2', component: CO2},
         {path: 'water', name: 'water', component: Water}
     ]},

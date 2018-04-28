@@ -34,6 +34,8 @@ export default {
   },
   created() {
     this.$store.dispatch("GetControl");
+    this.$store.dispatch("GetCalibration");
+    
   }
 };
 </script>

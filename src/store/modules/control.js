@@ -2,7 +2,11 @@ import axios from '../../axios/axios';
 
 const state = {
     control: {},
-    waterControl: {}
+    waterControl: {},
+    calibration: {
+        ec: 1.0,
+        ph: 1.0
+    }
 }
 
 const getters = {
@@ -23,6 +27,9 @@ const getters = {
     },
     getCo2Control: (state)=>{
         return state.control[1].setbound;
+    },
+    getCalibration: (state)=>{
+        return state.calibration;
     }
 }
 
@@ -35,9 +42,17 @@ const mutations ={
 }
 
 const actions = {
+    GetCalibration: ({commit,state})=>{
+        axios.get('/control/calibration').then(res=>{
+            state.calibration = res.data;
+        });
+    },
+    SetCalibration: ({commit,state})=>{
+        axios.post('/control/calibration', state.calibration).then(res=>{});
+    },
     SetWaterControl: ({commit,state})=>{
         axios.post('/control/water', state.waterControl).then(res=>{
-            console.log(res);
+            // console.log(res);
         });
     },
     GetWaterControl: ({commit,state})=>{
@@ -77,14 +92,18 @@ const actions = {
         axios.post('control/',{
             control: state.control[channel]
         })
-        .then(res=> console.log(res))
+        .then(res=> { 
+            /*console.log(res)*/ 
+        })
         .catch(err=>console.log(err))
     },
     uploadWater:({commit,state}, channel)=>{
         axios.post('control/water',{
             control: state.waterControl
         })
-        .then(res=> console.log(res))
+        .then(res=> {
+            // console.log(res)
+        })
         .catch(err=>console.log(err))
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="form-group" @mouseover="show = true" @mouseout="show =false">
+  <div class="form-group" @mouseover="show = true" @mouseout="show =false" style="margin:30px;">
     <transition-group name="slide" mode="in-out">
       <span style="display: inline-block;" key="input">
         <label style="font-size: 20px;"> {{title}} </label>

@@ -3,7 +3,11 @@
       <div class="col-md-4 text-center">
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div >
-                    <h2>Water</h2>
+                    <h2 style="display: inline-block;" >Water</h2>
+                    <span class="floating-sensor" :class="[{on: getSensors.floating}, {off: !getSensors.floating}]">
+                      <i class="fa fa-circle"></i>
+                    </span>
+                    
                 </div>
                 <div style="display: inline">
                   
@@ -78,7 +82,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["mcuStatus", 'co2Status', 'ecStatus', 'phStatus', 'getControl']),
+    ...mapGetters(["mcuStatus", 'co2Status', 'ecStatus', 'phStatus', 'getControl','getSensors']),
     waterProcess() {
       return this.mcuStatus.waterProcess;
     },
@@ -106,6 +110,9 @@ export default {
       else{
         return 'INACTIVE'
       }
+    },
+    floatingSensor(){
+      return this.$store.getSensors.floating
     }
   },
   methods: {
@@ -186,4 +193,11 @@ hr.vertical {
 .manual {
   color: rgb(250, 175, 35);
 }
+
+.floating-sensor{
+  position: absolute; 
+  top: 10px; 
+  right: 20px; 
+}
+
 </style>

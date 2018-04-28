@@ -24,7 +24,7 @@
             </router-link>
           </div>
           <div class="col-md-12 col-lg-12" style="margin-top: 30px;" key="solution">
-            <router-link tag="div" to="/control/nutrition" class="grey-panel pn">
+            <router-link tag="div" to="/control/nutrition/param" class="grey-panel pn">
               <div style="display: inline">
                 <img src="/src/assets/img/proteins.png" style="width: 80px; margin: 10px;">
               </div>
