@@ -28,5 +28,8 @@ export default {
     setactivity: 'Activity',
     watersystem: 'Water',
     solution: 'Nutrition',
-    configuration: 'Configuration'
+    configuration: 'Configuration',
+    update: 'UPDATE',
+    cancle: 'CANCLE'
+    
 }

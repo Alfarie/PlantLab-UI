@@ -6,7 +6,7 @@
           <div style="display: inline;">
             <img src="/src/assets/img/calibre.png" style="height: 60px;">
           </div>
-          <span style="font-size: 30px;">NUTRITION</span>
+          <span style="font-size: 30px;" v-lang.title></span>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
     <div class="row text-center" style="margin-top: 30px;">
         <div class="col-lg-4 col-lg-offset-4" @click="update">
             <div class="grey-panel pn" style="padding: 10px;">
-                <h1 style="color: rgb(83, 147, 231)">UPDATE</h1>
+                <h1 style="color: rgb(83, 147, 231)" v-lang.update></h1>
             </div>
         </div>
     </div>
@@ -29,37 +29,43 @@
 </template>
 
 <script>
-import InputValue from './inputvalue.vue'
-import {mapGetters} from 'vuex';
-export default{
-    data(){
-        return {
-            operand: {
-                time: 5,
-                setpoint: 0.1
-            }
-        }
-    },
-    components:{
-        InputValue
-    },
-    computed:{
-        ...mapGetters(['getCalibration'])
-    },
-    watch:{
-      
-    },
-    methods: {
-      update(){
-        this.$store.dispatch('popupUpdateModal');
-        this.$store.dispatch('SetCalibration');
+import InputValue from "./inputvalue.vue";
+import { mapGetters } from "vuex";
+export default {
+  data() {
+    return {
+      operand: {
+        time: 5,
+        setpoint: 0.1
       }
+    };
+  },
+  components: {
+    InputValue
+  },
+  computed: {
+    ...mapGetters(["getCalibration"]),
+    
+  },
+
+  methods: {
+    update() {
+      this.$store.dispatch("popupUpdateModal");
+      this.$store.dispatch("SetCalibration");
     }
-}
+  },
+  messages:{
+    en: {
+      title: "CALIBRATION"
+    },
+    th: {
+      title: "ตั้งค่าเซ็นเซอร์"
+    }
+  }
+};
 </script>
 
 
 <style scoped>
-  
 
 </style>

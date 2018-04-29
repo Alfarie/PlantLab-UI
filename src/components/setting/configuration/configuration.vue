@@ -15,20 +15,20 @@
     <div class="row text-center" style="margin-top: 20px;">
 
       <div class="col-lg-4">
-        <h2>Water System</h2>
-        <app-switch-button title="Circulating Water" v-model="isCir"></app-switch-button>
-        <app-switch-button title="Fill Water" v-model="isFill"></app-switch-button>
+        <h2 v-lang.water></h2>
+        <app-switch-button :title="cir" v-model="isCir"></app-switch-button>
+        <app-switch-button :title="fill" v-model="isFill"></app-switch-button>
       </div>
       <div class="col-lg-4">
-        <h1>Nutrition</h1>
-        <app-switch-button title="EC Pump" v-model="ecPump"></app-switch-button>
-        <app-switch-button title="pH Pump" v-model="phPump"></app-switch-button>
-        <app-switch-button title="CO2 Valve" v-model="co2valve"></app-switch-button>
+        <h1 v-lang.solution></h1>
+        <app-switch-button :title="ecP" v-model="ecPump"></app-switch-button>
+        <app-switch-button :title="phP" v-model="phPump"></app-switch-button>
+        <app-switch-button :title="co2V" v-model="co2valve"></app-switch-button>
       </div>
       <div class="col-lg-4">
-        <h1>Light</h1>
-        <app-switch-button title="Auto Mode" v-model="autoMode"></app-switch-button>
-        <app-switch-button title="LED Manual" v-model="ledManual" v-if="!autoMode"></app-switch-button>
+        <h1 v-lang.light></h1>
+        <app-switch-button :title="auto" v-model="autoMode"></app-switch-button>
+        <app-switch-button :title="led" v-model="ledManual" v-if="!autoMode"></app-switch-button>
       </div>
     </div>
   </div>
@@ -112,10 +112,53 @@
           this.$store.dispatch('uploadControl',0);
 
         }
-      }
+      },
+      cir(){
+        return this.translate('cir');
+      },
+      fill(){
+        return this.translate('fill');
+      },
+      ecP(){
+        return this.translate('ecPump');
+      },
+      phP(){
+        return this.translate('phPump');
+      },
+      co2V(){
+        return this.translate('co2Valve');
+      },
+      auto(){
+        return this.translate('autoMode');
+      },
+      led(){
+        return this.translate('ledManual');
+      },
     },
     components: {
       appSwitchButton: SwitchButton
+    },
+    messages:{
+      en:{
+        water: 'Water System',
+        cir: 'Circulating Water',
+        fill: 'Fill Water',
+        ecPump: 'EC Pump',
+        phPump: 'pH Pump',
+        co2Valve: 'CO2 Valve',
+        autoMode: 'Auto Mode',
+        ledManual: 'LED Manual'
+      },
+      th:{
+        water: 'ระบบน้ำ',
+        cir: 'การหมุนเวียนน้ำ',
+        fill: 'รการเติมน้ำ',
+        ecPump: 'อีซีปั้ม',
+        phPump: 'พีเอชปั้ม',
+        co2Valve: 'CO2 ปั้ม',
+        autoMode: 'อัตโนมัติ',
+        ledManual: 'เปิด/ปิดไฟ'    
+      }
     }
   }
 

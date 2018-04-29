@@ -39,7 +39,7 @@
           <div class="grey-panel pn">
             <div class="block" style="margin: 20px;">
               <h2>
-                <i class="fa fa-chevron-left"></i> กลับหน้าหลัก</h2>
+                <i class="fa fa-chevron-left"></i> <span v-lang.backtohome></span></h2>
             </div>
           </div>
         </router-link>

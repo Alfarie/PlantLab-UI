@@ -1,6 +1,6 @@
 <template>
   <div class="row" style="margin-top: 30px;">
-    <h2>Timer List</h2>
+    <h2 v-lang.timerlist></h2>
     <transition-group name="slide">
       <div class="col-md-5 col-md-offset-1" style="margin-top: 20px;" v-for="(tl,ind) in timerList" :key="$route.params.id + '-' +ind">
         <app-timer-box :data="tl" :index="ind"></app-timer-box>
@@ -25,6 +25,14 @@ export default {
   },
   components: {
     appTimerBox: TimerBox
+  },
+  messages:{
+    en:{
+      timerlist: "TIMER LIST"
+    },
+    th:{
+      timerlist: "เวลาทั้งหมด"
+    }
   }
 };
 </script>

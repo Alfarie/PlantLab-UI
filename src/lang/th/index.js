@@ -28,5 +28,7 @@ export default {
     setactivity: 'สถานะปลูก',
     watersystem: 'น้ำ',
     solution: 'สารอาหาร',
-    configuration: 'ตั้งค่าระบบ'
+    configuration: 'ตั้งค่าระบบ',
+    update: 'อัพเดท',
+    cancle: 'ยกเลิก'
 }

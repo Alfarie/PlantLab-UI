@@ -15,6 +15,16 @@ export default {
             this.$store.commit('setTime', dt.time);
             this.$store.commit('setDate', dt.date)
         }
+    },
+    messages:{
+        en:{
+            date: 'Date',
+            time: 'Time'
+        },
+        th:{
+            date: 'วัน/เดือน/ปี',
+            time: 'เวลา'
+        }
     }
 };
 </script>

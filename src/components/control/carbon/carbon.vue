@@ -6,7 +6,7 @@
           <div style="display: inline;">
             <img src="/src/assets/img/leaf.png" style="height: 60px;">
           </div>
-          <span style="font-size: 30px;">CARBON DIOXIDE</span>
+          <span style="font-size: 30px;" v-lang.co2></span>
         </div>
       </div>
     </div>
@@ -18,7 +18,7 @@
     <div class="row text-center" style="margin-top: 100px;">
             <div class="col-lg-6 col-lg-offset-3" @click="update">
                 <div class="grey-panel pn" style="padding: 10px;">
-                    <h1 style="color: rgb(83, 147, 231)">UPDATE</h1>
+                    <h1 style="color: rgb(83, 147, 231)" v-lang.update></h1>
                 </div>
             </div>
         </div>

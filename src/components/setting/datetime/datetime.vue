@@ -12,12 +12,12 @@
       <div class="col-xs-12 col-lg-12 text-center">
 
         <div style="display: block; margin: 20px;">
-          <h1>Date</h1>
+          <h1 v-lang.date></h1>
           <input type="date" name="" id="setdate" class="form-control timer text-center" style="width: 50%;">
         </div>
 
         <div style="display: block; margin: 20px;">
-          <h1>Time</h1>
+          <h1 v-lang.time></h1>
           <input type="text" class="form-control timer text-center" name="" id="settime" style="width: 50%">
         </div>
 
@@ -25,10 +25,10 @@
     </div>
     <transition name="fade" mode="out-in">
       <div class="row" v-if="isDateChange">
-        <div class="col-xs-12 col-lg-12 outer" @click="Submit">
-          <div class="grey-panel inner">
+        <div class="col-xs-12 col-lg-12 outer" >
+          <div class="grey-panel inner" @click="Submit">
             <div class="text-center">
-              <span class="timer-start-format">Submit</span>
+              <span class="timer-start-format" v-lang.update></span>
             </div>
           </div>
         </div>
@@ -50,7 +50,7 @@
 
 <script>
 var $ = (window.jQuery = require("jquery"));
-import moment from 'moment'
+import moment from "moment";
 export default {
   data() {
     return {
@@ -66,7 +66,7 @@ export default {
       // 2018-02-23 02 : 00
       this.showAlert = false;
       // console.log(this.date, this.time);
-      this.$store.dispatch('popupUpdateModal');
+      this.$store.dispatch("popupUpdateModal");
       this.$store.dispatch("updateDateTime", {
         date: this.date,
         time: this.time
@@ -88,6 +88,16 @@ export default {
       this.date = event.target.value;
       this.isDateChange = true;
     });
+  },
+  messages: {
+    en: {
+      date: "Date",
+      time: "Time"
+    },
+    th: {
+      date: "วัน/เดือน/ปี",
+      time: "เวลา"
+    }
   }
 };
 </script>
@@ -130,12 +140,12 @@ export default {
 }
 
 .timer-start-format {
-  font-size: 60px;
+  font-size: 50px;
   color: rgb(83, 147, 231);
 }
 
 .timer-stop-format {
-  font-size: 60px;
+  font-size: 50px;
   color: rgb(236, 133, 130);
 }
 </style>

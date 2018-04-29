@@ -6,7 +6,7 @@
           <div style="display: inline;">
             <img src="/src/assets/img/led.png" style="height: 60px;">
           </div>
-          <span style="font-size: 30px;">LED TIMER LIST</span>
+          <span style="font-size: 30px;" v-lang.light></span>
         </div>
       </div>
     </div>

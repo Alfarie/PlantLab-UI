@@ -19,7 +19,7 @@
                 <img src="/src/assets/img/leaf.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin-top: 20px;">
-                <h2 v-lang.co2></h2>
+                <h2 v-lang.co2 style="font-size: 28px;"></h2>
               </div>
             </router-link>
           </div>

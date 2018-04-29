@@ -4,7 +4,7 @@
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-        <img src="/src/assets/img/logo1.png" alt="" height="52" width="181">
+        <img src="/src/assets/img/logo2.png" alt="" height="52" width="181">
         <!-- <h2 style="font-size: 35px;"><b>Grobot-L 2.0</b> <small>{{language | upperCase}}</small></h2> -->
     </div>
     

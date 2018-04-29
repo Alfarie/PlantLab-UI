@@ -3,7 +3,7 @@
       <div class="col-md-4 text-center">
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div >
-                    <h2 style="display: inline-block;" >Water</h2>
+                    <h2 style="display: inline-block;" v-lang.watersystem></h2>
                     <span class="floating-sensor" :class="[{on: getSensors.floating}, {off: !getSensors.floating}]">
                       <i class="fa fa-circle"></i>
                     </span>
@@ -23,7 +23,7 @@
       <div class="col-md-4 text-center">
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div >
-                    <h2>Carbon dioxide</h2>
+                    <h2 v-lang.co2></h2>
                 </div>
                 <div style="display: inline">
                     <img src="/src/assets/img/co2process.svg" style="height: 100px;">
@@ -38,7 +38,7 @@
       <div class="col-md-4 text-center">
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div >
-                    <h2>Solution</h2>
+                    <h2 v-lang.solution></h2>
                 </div>
                 <div style="display: inline">
                     <img src="/src/assets/img/solution.svg" style="width: 100px;">

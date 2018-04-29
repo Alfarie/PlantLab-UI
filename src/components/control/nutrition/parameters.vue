@@ -7,7 +7,7 @@
           <div style="display: inline;">
             <img src="/src/assets/img/proteins.png" style="height: 60px;">
           </div>
-          <span style="font-size: 30px;">NUTRITION</span>
+          <span style="font-size: 30px;" v-lang.solution></span>
         </div>
       </div>
     </div>
