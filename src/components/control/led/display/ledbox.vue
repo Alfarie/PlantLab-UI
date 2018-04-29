@@ -46,12 +46,12 @@ export default {
 <style scoped>
 
 .btn-circle.btn-xl {
-    width: 60px;
-    height: 60px;
-    padding: 10px 16px;
-    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
     font-size: 24px;
     line-height: 1.33;
+    margin-right: 5px;
 }
 
 .btn-circle {
@@ -77,12 +77,12 @@ export default {
 }
 
 .timer-start-format {
-  font-size: 50px;
+  font-size: 48px;
   color: rgb(83, 147, 231);
 }
 
 .timer-stop-format {
-  font-size: 50px;
+  font-size: 48px;
   color: rgb(236, 133, 130);
 }
 </style>
