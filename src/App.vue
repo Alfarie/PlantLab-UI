@@ -35,6 +35,8 @@ export default {
   created() {
     this.$store.dispatch("GetControl");
     this.$store.dispatch("GetCalibration");
+    this.$store.dispatch("GetPlants");
+    this.$store.dispatch("GetActivity");
     
   }
 };

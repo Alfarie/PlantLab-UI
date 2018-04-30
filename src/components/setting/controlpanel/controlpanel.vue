@@ -23,7 +23,7 @@
           </div>
         </router-link>
 
-        <router-link tag="div" to="/activity" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="activity">
+        <router-link tag="div" to="/setting/activity/select" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="activity">
           <div class="grey-panel pn">
             <div style="display: inline">
               <img src="/src/assets/img/leaf.png" style="width: 80px; margin: 10px;">

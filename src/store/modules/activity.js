@@ -1,25 +1,26 @@
 import Vue from 'vue';
+import axios from '../../axios/axios'
+import moment from 'moment'
 var dateFormat = require('dateformat');
 const state = {
     activity: {
         type: 'Lettuce',
         dth: 0,
-        ptd: new Date().toDateString()
-    }
+        ptd: new Date().toDateString(),
+        image: 'lettuce.jpg'
+    },
+    plants:[]
 }
 
 const getters = {
+    getPlants: state=>{
+        return state.plants
+    },
     activity: state => {
         return state.activity;
     },
     activityFormat: state => {
-        var act = state.activity;
-       
-        return {
-            type: act.type,
-            dth: act.dth,
-            ptd: act.ptd
-        }
+        return state.activity;
     }
 }
 
@@ -30,14 +31,22 @@ const mutations = {
 }
 
 const actions = {
-    updateActivity: ({commit}, payload) => {
-        // commit('updateActivity')
-        Vue.http.get('api/activities')
-            .then(
-                res => {
-                    commit('updateActivity',res.body)
-                }
-            )
+    GetPlants: ({state})=>{
+        axios.get('/setting/plants').then(
+            res=>{
+                state.plants = res.data;
+            }
+        )
+    },
+    GetActivity: ({getters})=>{
+        axios.get('/setting/activity').then(
+            res=>{
+                state.activity = res.data;
+            }
+        )
+    },
+    SetActivity: ({state},payload)=>{
+        axios.post('/setting/activity', payload).then()
     }
 }
 

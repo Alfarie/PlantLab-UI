@@ -16,7 +16,7 @@
           <div class="col-md-12 col-lg-12" style="margin-top: 30px;" key="co2">
             <router-link tag="div" to="/control/co2" class="grey-panel pn">
               <div style="display: inline">
-                <img src="/src/assets/img/leaf.png" style="width: 80px; margin: 10px;">
+                <img src="/src/assets/img/leaf.png" style="width: 75px; margin-bottom: 10px; margin-top: 10px;">
               </div>
               <div class="block" style="margin-top: 20px;">
                 <h2 v-lang.co2 style="font-size: 28px;"></h2>

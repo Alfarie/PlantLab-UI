@@ -2,7 +2,7 @@
   <div class="row outer">
     <div class="inner">
       <h1 v-lang.activity></h1>
-      <img src="/src/assets/img/lettuce.jpg" class="img-circle img-responsive">
+      <img :src="'/src/assets/img/plant/' + activityFormat.image" class="img-circle img-responsive">
     </div>
     <div class="inner" >
         <div class="content-panel" style="width: 100%;">
@@ -20,7 +20,7 @@
               </tr>
               <tr>
                 <td v-lang.dth></td>
-                <td> {{activityFormat.dth}} days left</td>
+                <td> {{diff}} days left</td>
               </tr>
               <tr>
                 <td v-lang.ptd></td>
@@ -44,10 +44,19 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["activityFormat"])
+    ...mapGetters(["activityFormat", "getDate"]),
+    diff(){
+      let now = moment(this.getDate);
+      let ptd = moment(this.activityFormat.ptd);
+      var duration = moment.duration(ptd.diff(now));
+      var days = duration.asDays();
+      return days;
+    }
   },
+  
   created() {
     console.log(this.activityFormat);
+    this.$store.dispatch("GetActivity");
   }
 };
 </script>
