@@ -30,5 +30,6 @@ export default {
     solution: 'สารอาหาร',
     configuration: 'ตั้งค่าระบบ',
     update: 'อัพเดท',
-    cancle: 'ยกเลิก'
+    cancle: 'ยกเลิก',
+    wifi: 'WI-FI'
 }

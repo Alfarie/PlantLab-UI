@@ -37,6 +37,8 @@ export default {
     this.$store.dispatch("GetCalibration");
     this.$store.dispatch("GetPlants");
     this.$store.dispatch("GetActivity");
+
+    this.$store.dispatch("GetWifiStatus");
     
   }
 };

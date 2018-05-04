@@ -19,6 +19,7 @@ import DateTime from '../components/setting/datetime/datetime.vue'
 import Activity from '../components/setting/activity/activity.vue'
 import SelectPlant from '../components/setting/activity/selectplant.vue'
 import SubmitPlant from '../components/setting/activity/submit.vue'
+import Wifi from '../components/setting/wifi/wifi.vue'
 
 export const routes = [
     {path: '/showdata', name: 'showo-data', component: ShowData},
@@ -41,7 +42,8 @@ export const routes = [
         {path: 'activity', name: 'activity', component: Activity, children:[
             {path: 'select', name: 'select', component: SelectPlant},
             {path: 'submit', name: 'submit', component: SubmitPlant}
-        ] },
+        ]},
+        {path: 'wifi', name:'wifi', component: Wifi}
     ]},
     {path: '/*', redirect: "/summary"}
 ]

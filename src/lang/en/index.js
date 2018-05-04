@@ -30,6 +30,7 @@ export default {
     solution: 'Nutrition',
     configuration: 'Configuration',
     update: 'UPDATE',
-    cancle: 'CANCLE'
+    cancle: 'CANCLE',
+    wifi: 'WI-FI'
     
 }

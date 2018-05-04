@@ -8,6 +8,8 @@ import control from './modules/control'
 
 import activity from './modules/activity'
 import uiStatus from './modules/ui-status'
+
+import wifi from './modules/wifi'
 Vue.use(Vuex);
 export const store = new Vuex.Store({
     modules: {
@@ -16,7 +18,8 @@ export const store = new Vuex.Store({
         mcu,
         control,
         activity,
-        uiStatus
+        uiStatus,
+        wifi
     }
     
 });
