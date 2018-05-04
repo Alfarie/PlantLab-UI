@@ -2,26 +2,27 @@ import axios from '../../axios/axios'
 import moment from 'moment'
 
 const state = {
-    wifiStatus: []
+    AvailableWifi: []
 }
 
 const getters = {
-   wifiStatus: (state)=>{
-       return state.wifiStatus;
+   AvailableWifi: (state)=>{
+       return state.AvailableWifi;
    }
 }
 
 const mutations = {
-   setWifiStatus: (state,payload)=>{
-       state.wifiStatus = payload;
+   setAvailableWifi: (state,payload)=>{
+       state.AvailableWifi = payload;
    }
 }
 
 const actions = {
-    GetWifiStatus: ({commit})=>{
+    GetAvailableWifi: ({commit})=>{
         axios.get('/setting/wifi/scan')
             .then(res=>{
-                commit('setWifiStatus', res.data);
+                // console.log(res.data);
+                commit('setAvailableWifi', res.data);
             })
             .catch(err=>{
                 console.log(err);
