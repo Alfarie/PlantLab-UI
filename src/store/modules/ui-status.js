@@ -30,6 +30,27 @@ const actions = {
             state.image = '/src/assets/img/checked.png'
             setTimeout(()=>{ state.isUpdating = false}, 300);
         }, 1700);
+    },
+    popUpWifi: ({state}, message)=>{
+        
+        // state.popupMessage = "WIFI"
+        if(message == 'success'){
+            state.popupMessage = "CONNECTION SUCCESS"
+            state.image = '/src/assets/img/checked.png'
+            setTimeout(()=>{ state.isUpdating = false}, 1500);
+        }
+        if(message == 'pending'){
+            state.popupMessage = "CONNECTING..."
+            state.image = '/src/assets/img/Spinner.svg'
+        }
+        if(message == 'fail'){
+            state.popupMessage = "INVALID PASSWORD"
+            state.image = '/src/assets/img/error.png'
+            setTimeout(()=>{ state.isUpdating = false}, 1500);
+        }
+        state.isUpdating = true;
+        
+        
     }
 }
 

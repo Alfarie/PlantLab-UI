@@ -2,8 +2,9 @@
   <div>
     
     <app-modal v-if="isUpdating">
-      <h2 slot="body"> <img :src="popupImage" width="60" height="60"> {{popupMessage}}</h2>
+      <h3 slot="body"> <img :src="popupImage" width="60" height="60"> {{popupMessage}}</h3>
     </app-modal>
+    
     <app-header></app-header>
      <div class="container-fluid">
       <router-view></router-view>
@@ -27,6 +28,7 @@ export default {
   computed: {
     ...mapGetters(['isUpdating', 'popupMessage', 'popupImage'])
   },
+  
   methods:{ 
     popup(){
       this.$store.dispatch('popupUpdateModal');
@@ -39,6 +41,7 @@ export default {
     this.$store.dispatch("GetActivity");
 
     this.$store.dispatch("GetAvailableWifi");
+    this.$store.dispatch("GetCurrentWifi");
     
   }
 };

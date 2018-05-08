@@ -34,7 +34,7 @@
           </div>
         </router-link>
 
-        <router-link tag="div" to="/setting/wifi" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="activity">
+        <router-link tag="div" to="/setting/wifi/list" class="col-md-12 col-lg-12" style="margin-top: 30px;" key="wifi">
           <div class="grey-panel pn">
             <div style="display: inline">
               <img src="/src/assets/img/wifi.png" style="width: 80px; margin: 10px;">

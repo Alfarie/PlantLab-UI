@@ -108,7 +108,8 @@ export default {
         return (this.co2Status.status == 1)? 'VALUE OPENED':'VALUE CLOSED'
       }
       else{
-        return 'INACTIVE'
+        // return 'INACTIVE'
+        return '-'
       }
     },
     floatingSensor(){

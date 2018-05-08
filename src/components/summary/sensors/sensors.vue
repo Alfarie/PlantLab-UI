@@ -137,13 +137,13 @@
     padding: 0.5em 0.6em;
 
   }
-
+  
   .li-sensor-temp {
-    color: rgb(133, 219, 241);
+    color: rgb(10, 188, 233);
   }
 
   .li-sensor-humi {
-    color: rgb(130, 236, 204);
+    color: rgb(0, 243, 170);
   }
 
   .padding {

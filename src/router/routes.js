@@ -20,6 +20,9 @@ import Activity from '../components/setting/activity/activity.vue'
 import SelectPlant from '../components/setting/activity/selectplant.vue'
 import SubmitPlant from '../components/setting/activity/submit.vue'
 import Wifi from '../components/setting/wifi/wifi.vue'
+import WifiStatus from '../components/setting/wifi/wifi-status.vue'
+import WifiList from '../components/setting/wifi/wifi-list.vue'
+import WifiConnect from '../components/setting/wifi/wifi-connect.vue'
 
 export const routes = [
     {path: '/showdata', name: 'showo-data', component: ShowData},
@@ -43,7 +46,11 @@ export const routes = [
             {path: 'select', name: 'select', component: SelectPlant},
             {path: 'submit', name: 'submit', component: SubmitPlant}
         ]},
-        {path: 'wifi', name:'wifi', component: Wifi}
+        {path: 'wifi', name:'wifi', component: Wifi, children:[
+            {path: 'list', name: 'wifi-list', component: WifiList},
+            {path: 'status', name: 'wifi-stat', component: WifiStatus},
+            {path: 'connect', name: 'wifi-connect', component: WifiConnect}
+        ]}
     ]},
     {path: '/*', redirect: "/summary"}
 ]
