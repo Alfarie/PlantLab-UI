@@ -1,7 +1,7 @@
 import axios from '../../axios/axios';
-
+import controlModel from '../../models/model-control.js'
 const state = {
-    control: {},
+    control: controlModel,
     waterControl: {},
     calibration: {
         ec: 1.0,
