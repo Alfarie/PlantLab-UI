@@ -1,5 +1,9 @@
+import moment from 'moment'
 const state = {
-    sensors: {}
+    sensors: {
+        date: moment().format('YYYY-MM-DD'),
+        time: moment().format('HH:mm:ss')
+    }
 }
 const getters = {
     getSensors(state){
