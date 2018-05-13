@@ -17,7 +17,7 @@
         <input type="password" class="form-control nutrion-input" placeholder="PASSWORD"  @focus="show" data-layout="normal">
       </span>
       <transition name="slide" mode="out-in">
-        <div style="margin-top: 30px;" v-show="visible">
+        <div style="margin-top: 30px; margin-left: 30px;" v-show="visible">
           <vue-touch-keyboard  :layout="layout" :cancel="hide" :accept="accept" :input="input"  v-model="password"/>
         </div>
       </transition>
@@ -85,7 +85,7 @@ export default {
 
 .inner {
   display: inline-block;
-  width: 90%;
+  width: 100%;
 }
 
 .nutrion-input {

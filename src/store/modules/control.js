@@ -66,6 +66,7 @@ const actions = {
             state.control = res.data;
         })
     },
+
     addTimer: ({commit,dispatch}, timer)=>{
         commit('addTimer', timer);
         dispatch('uploadControl', 0);
@@ -105,7 +106,21 @@ const actions = {
             // console.log(res)
         })
         .catch(err=>console.log(err))
-    }
+    },
+    addWaterTimer:({dispatch,state}, timer)=>{
+        setTimeout(()=>{
+            state.control[4].timer.list.push(timer);
+            dispatch('uploadControl', 4);
+        },2000);
+    },
+    deleteWaterTimer:({dispatch,state}, index)=>{
+
+        setTimeout(()=>{
+            state.control[4].timer.list.splice(index,1);
+            dispatch('uploadControl', 4);
+        },2000);
+    },
+
 }
 
 export default{

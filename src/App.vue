@@ -98,7 +98,7 @@ body {
 .fade-leave-active {
   transition: opacity 0.5s;
   opacity: 0;
-  position: absolute;
+  /* position: absolute; */
 }
 
 .slide-enter {

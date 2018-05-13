@@ -10,7 +10,6 @@
         </div>
       </div>
     </div>
-    
     <div class="row text-center" style="margin-top: 30px;">
       <form>
         <input-value :title="cirTime" v-model="getWaterControl.cirTime" :operand="operand"></input-value>
@@ -44,7 +43,7 @@ export default {
     InputValue
   },
   computed: {
-    ...mapGetters(["getWaterControl"]),
+    ...mapGetters(["getWaterControl", 'getControl']),
     cirTime(){
       return this.translate("cirTime");
     },

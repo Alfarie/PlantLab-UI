@@ -16,8 +16,10 @@
 
       <div class="col-lg-4">
         <h2 v-lang.water></h2>
-        <app-switch-button :title="cir" v-model="isCir"></app-switch-button>
+        <app-water-mode v-model="waterMode"></app-water-mode>
+        <app-switch-button :title="cir" v-model="isCir" v-if="!waterMode"></app-switch-button>
         <app-switch-button :title="fill" v-model="isFill"></app-switch-button>
+        po
       </div>
       <div class="col-lg-4">
         <h1 v-lang.solution></h1>
@@ -36,12 +38,28 @@
 
 <script>
   import SwitchButton from './swtichbutton.vue'
+  import WaterMode from './watermode.vue'
   import {
     mapGetters
   } from 'vuex'
   export default {
     computed: {
       ...mapGetters(['getWaterControl', 'getControl']),
+      waterMode: {
+        get(){
+          //timer = true,  sequence = false
+          return this.getControl[4].mode == 5 ?false:true
+        },
+        set(value){
+          console.log(value);
+          this.getControl[4].mode = (value)?1:5
+          if(this.getControl[4].mode == 1) this.getWaterControl.isCir = 0;
+          this.getControl[4].timer.mode = 1;
+          this.$store.dispatch('popupUpdateModal')
+          this.$store.dispatch('uploadWater');
+          this.$store.dispatch('uploadControl',4);
+        }
+      },
       isCir: {
         get(){
           return (this.getWaterControl.isCir == 1)? true:false
@@ -136,7 +154,8 @@
       },
     },
     components: {
-      appSwitchButton: SwitchButton
+      appSwitchButton: SwitchButton,
+      appWaterMode: WaterMode
     },
     messages:{
       en:{

@@ -11,7 +11,10 @@ import Calibration from '../components/control/nutrition/calibration.vue'
 import Parameters from '../components/control/nutrition/parameters.vue'
 import CO2 from '../components/control/carbon/carbon.vue'
 
-import Water from '../components/control/water/water.vue'
+import Water from '../components/control/water/water/water.vue'
+import WaterTimer from '../components/control/water/water-timer/water-timer.vue'
+import WaterTimerDisplay from '../components/control/water/water-timer/water-timer-display.vue'
+import WaterTimerAdd  from '../components/control/water/water-timer/add/add-water-timer.vue'
 
 import Setting from '../components/setting/setting.vue'
 import Configuration from '../components/setting/configuration/configuration.vue'
@@ -37,7 +40,12 @@ export const routes = [
             {path: 'param', name: 'parameters', component: Parameters}
         ]},
         {path: 'co2', name: 'co2', component: CO2},
-        {path: 'water', name: 'water', component: Water}
+        {path: 'water', name: 'water', component: Water},
+        {path: 'water-timer', name: 'water-timer', component: WaterTimer, children:[
+            {path: 'add', name: 'water-timer-add', component: WaterTimerAdd},
+            {path: 'display', name: 'water-timer-display', component: WaterTimerDisplay}
+        ]}
+
     ]},
     {path: '/setting', name: 'setting', component: Setting, children: [
         {path: 'configuration', name: 'configuration', component: Configuration },
