@@ -60,7 +60,7 @@ export default {
   font-weight: bolder;
 }
 .off {
-  color: rgb(224, 100, 100);
+  color: rgb(206, 205, 205);
   font-weight: bolder;
 }
 </style>

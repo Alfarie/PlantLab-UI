@@ -4,7 +4,7 @@
             <router-link to="/timer/fan" tag="div" class="grey-panel pn">
                 <div >
                     <h2 style="display: inline-block;" v-lang.watersystem></h2>
-                    <span class="floating-sensor" :class="[{on: getSensors.floating}, {off: !getSensors.floating}]">
+                    <span class="floating-sensor" :class="[{on: getSensors.floating}, {red: !getSensors.floating}]">
                       <i class="fa fa-circle"></i>
                     </span>
                     
@@ -46,11 +46,11 @@
                 <div>
                     <h3> 
                       <span :class="[{on: (ecStatus.status==1)}, {off: (ecStatus.status!=1)}]">
-                        EC<span v-if="ecStatus.mode != 2" style="color:red;">(INA)</span>
+                        EC <span v-if="ecStatus.mode != 2" style="color: black;">(N)</span>
                       </span>  
                     : 
                       <span :class="[{on: (phStatus.status==1)}, {off: (phStatus.status!=1)}]" >
-                        pH <span v-if="phStatus.mode != 2" style="color:red;">(INA)</span>
+                        pH <span v-if="phStatus.mode != 2" style="color: black;">(N)</span>
                       </span> 
                     
                     </h3>
@@ -184,7 +184,12 @@ hr.vertical {
   font-weight: bolder;
 }
 .off {
-  color: rgb(224, 100, 100);
+  color: rgb(65, 63, 63);
+  font-weight: bolder;
+}
+
+.red {
+  color: rgb(230, 98, 98);
   font-weight: bolder;
 }
 
