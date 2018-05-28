@@ -90,6 +90,7 @@ const actions = {
         dispatch('uploadControl', 1);
     },
     uploadControl: ({commit,state}, channel)=>{
+        
         axios.post('control/',{
             control: state.control[channel]
         })
@@ -110,12 +111,13 @@ const actions = {
     addWaterTimer:({dispatch,state}, timer)=>{
         setTimeout(()=>{
             state.control[4].timer.list.push(timer);
+            state.control[4].timer.mode = 1;
             dispatch('uploadControl', 4);
         },2000);
     },
     deleteWaterTimer:({dispatch,state}, index)=>{
-
         setTimeout(()=>{
+            state.control[4].timer.mode = 1;
             state.control[4].timer.list.splice(index,1);
             dispatch('uploadControl', 4);
         },2000);

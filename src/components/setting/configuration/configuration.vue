@@ -126,7 +126,7 @@
         },
         set(value){
           this.getControl[0].manual.status = (value) ? 1 : 0;
-          this.$store.dispatch('popupUpdateModal')
+          // this.$store.dispatch('popupUpdateModal')
           this.$store.dispatch('uploadControl',0);
 
         }

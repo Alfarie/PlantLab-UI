@@ -62,13 +62,13 @@ const mutations ={
         state.waterProcess = data[0];
     },
     SOCKET_EC_STATUS: (state,data)=>{
-        state.ecStatus = data[0]
+        state.ecStatus = data[0].data
     },
     SOCKET_PH_STATUS: (state,data)=>{
-        state.phStatus = data[0]
+        state.phStatus = data[0].data;
     },
     SOCKET_CO2_STATUS: (state,data)=>{
-        state.co2Status = data[0]
+        state.co2Status = data[0].data;
     }
 }
 

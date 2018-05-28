@@ -44,7 +44,7 @@
                     <img src="/src/assets/img/solution.svg" style="width: 100px;">
                 </div>
                 <div>
-                    <h3> 
+                    <h3>
                       <span :class="[{on: (ecStatus.status==1)}, {off: (ecStatus.status!=1)}]">
                         EC <span v-if="ecStatus.mode != 2" style="color: black;">(N)</span>
                       </span>  
@@ -52,7 +52,6 @@
                       <span :class="[{on: (phStatus.status==1)}, {off: (phStatus.status!=1)}]" >
                         pH <span v-if="phStatus.mode != 2" style="color: black;">(N)</span>
                       </span> 
-                    
                     </h3>
                     <h3> {{ecStatus.crt}}/{{getControl[2].setpoint.setpoint}} : {{phStatus.crt}}/{{getControl[3].setpoint.setpoint}} </h3>
                 </div>

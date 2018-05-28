@@ -1,5 +1,11 @@
 
-import ShowData from '../ShowData.vue'
+import ShowData from '../ShowData/ShowData.vue'
+import ShowStatus from '../ShowData/ShowStatus.vue'
+
+
+
+
+
 import Summary from '../components/summary/summary.vue'
 import Control from '../components/control/control.vue'
 import Led from '../components/control/led/led.vue'

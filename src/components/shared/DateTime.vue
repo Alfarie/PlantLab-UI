@@ -10,12 +10,6 @@ export default {
     computed: {
         ...mapGetters([ 'getTime'])
     },
-    created(){
-        this.$options.sockets.DATETIME = dt=>{
-            this.$store.commit('setTime', dt.time);
-            this.$store.commit('setDate', dt.date)
-        }
-    },
     messages:{
         en:{
             date: 'Date',

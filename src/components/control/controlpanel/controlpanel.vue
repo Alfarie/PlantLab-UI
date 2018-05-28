@@ -2,13 +2,14 @@
   <div class="container-fluid">
     <div class="row">
       <transition-group name="slide" mode="out-in" appear>
-
+          
           <div class="col-md-12 col-lg-12" style="margin-top: 30px;" key="watersystem">
             <router-link tag="div" :to="waterLink" class="grey-panel pn">
               <div style="display: inline">
                 <img src="/src/assets/img/pump.png" style="width: 80px; margin: 10px;">
               </div>
               <div class="block" style="margin: 20px;">
+                
                 <h2 v-lang.watersystem></h2>
               </div>
             </router-link>
@@ -72,9 +73,13 @@ export default {
         } else if (this.getControl[4].mode == 1) {
           return "/control/water-timer/display";
         }
+        else{
+          return "/control/water"
+        }
       } catch (error) {
         return "/control/water";
       }
+      
     }
   }
 };
