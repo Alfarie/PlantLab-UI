@@ -24,14 +24,14 @@
       </div>
     </div>
 
-
     <div class="row padding">
       <div class="col-sm-12 col-md-5 col-md-offset-1 mycontent-left">
         <div class="block">
           <li class="fa fa-lightbulb fa-7x li-sensor-temp"></li>
           <div class="block" style="margin-left: 20px;">
             <h2 class="" v-lang.light></h2>
-            <h1 class=" li-sensor-temp" style="font-size: 45px;"> {{sensor.light}} Lux</h1>
+            <!-- <h1 class=" li-sensor-temp" style="font-size: 45px;"> {{sensor.light}} Lux</h1> -->
+            <h1 class=" li-sensor-temp" style="font-size: 43px;"> {{sensor.light}} lx</h1>
           </div>
         </div>
       </div>
