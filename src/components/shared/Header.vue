@@ -9,7 +9,7 @@
         <div class="pull-right">
            <app-date-time></app-date-time>
             <img src="/src/assets/img/connection.png" style="height: 40px;">
-            <span :class="[{online: connect}, {offline: !connect}]">{{isConnect}}...</span> 
+            <span :class="[{online: inetConnection}, {offline: !inetConnection}]">{{isInetConnection}}...</span> 
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@ import DateTime from "./DateTime.vue";
 import {mapGetters} from 'vuex';
 export default {
   computed:{
-    ...mapGetters(['isConnect', 'connect'])
+    ...mapGetters(['isConnect', 'connect', 'inetConnection', 'isInetConnection'])
   },
   components: {
     appDateTime: DateTime
