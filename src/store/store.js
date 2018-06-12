@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import connection from './modules/connection'
 import sensors from './modules/sensors'
 import socket from './modules/socket'
 import mcu from './modules/mcu-status'
@@ -19,7 +20,8 @@ export const store = new Vuex.Store({
         control,
         activity,
         uiStatus,
-        wifi
+        wifi,
+        connection
     }
     
 });
